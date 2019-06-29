@@ -1,4 +1,4 @@
-package com.dynamictech
+package com.hypertech
 
 class Fish2(var size:Int, hungry:Boolean){
 

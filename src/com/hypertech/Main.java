@@ -1,4 +1,4 @@
-package com.dynamictech;
+package com.hypertech;
 
 
 public class Main {
