@@ -6,7 +6,7 @@ import java.util.*
 
 fun main(){
 
-    val date1 = formatDate("30-06-2019", "dd-MM-yyyy", "yyyy-MM-dd")
+    val date1 = formatDate("30-06-2019")
 
 //    val parsedDate = LocalDate.parse(date1)
 //
@@ -22,18 +22,17 @@ fun main(){
 
 }
 
-fun formatDate(date:String, initiaDateFormat:String, endDateFormat:String):String{
-    val initialDate = SimpleDateFormat(initiaDateFormat).parse(date)
-    val formatter = SimpleDateFormat(endDateFormat)
-    val parsedDate = formatter.format(initialDate)
+fun formatDate(date:String):String{
 
-    val splinted = parsedDate.split("-")
-    val year = splinted[0].toInt()
+    val formatter = SimpleDateFormat("dd-MM-yyyy")
+    val splinted = date.split("-")
+    val days = splinted[0].toInt()
     val month = splinted[1].toInt()
-    val days = splinted[2].toInt()
+    val year = splinted[2].toInt()
+
 
     val calendar = Calendar.getInstance()
-    calendar.set(year,month-1,days)
+    calendar.set(year,month-1, days)
 
     calendar.add(Calendar.DAY_OF_MONTH, 28)
 
